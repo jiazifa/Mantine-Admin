@@ -1,28 +1,21 @@
 import '@mantine/core/styles.css';
 import 'mantine-react-table/styles.css';
 
-import { ColorSchemeScript, DirectionProvider, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { Analytics } from '@vercel/analytics/react';
+import { META_INFO } from '@/config';
 import { inter } from '@/styles/fonts';
 import { theme } from '@/styles/theme';
 import { AppProvider } from './provider';
 
+
 export const metadata = {
 	metadataBase: new URL('https://mantine-admin.vercel.app/'),
-	title: { default: 'Mantine Admin', template: '%s | Mantine Admin' },
-	description: 'A Modern Dashboard with Next.js.',
-	keywords: [
-		'Next.js',
-		'Mantine',
-		'Admin',
-		'Template',
-		'Admin Template',
-		'Admin Dashboard',
-		'Admin Panel',
-		'Admin UI',
-	],
+	title: { default: META_INFO.title, template: `%s | ${META_INFO.title}` },
+	description: META_INFO.description,
+	keywords: META_INFO.keywords,
 	authors: [
 		{
 			name: 'jotyy',
@@ -44,15 +37,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				/>
 			</head>
 			<body className={inter.className}>
-				<DirectionProvider>
-					<MantineProvider theme={theme}>
-						<ModalsProvider>
-							<AppProvider>{children}</AppProvider>
-							<Analytics />
-						</ModalsProvider>
-						<Notifications />
-					</MantineProvider>
-				</DirectionProvider>
+				<MantineProvider theme={theme}>
+					<ModalsProvider>
+						<AppProvider>{children}</AppProvider>
+						<Analytics />
+					</ModalsProvider>
+					<Notifications />
+				</MantineProvider>
 			</body>
 		</html>
 	);

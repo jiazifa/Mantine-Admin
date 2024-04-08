@@ -46,3 +46,18 @@ export const navLinks: NavItem[] = [
 		],
 	},
 ];
+
+export const META_INFO = {
+	title: 'Mantine Admin1',
+	description: 'A Modern Dashboard with Next.js.',
+	keywords: [
+		'Next.js',
+		'Mantine',
+		'Admin',
+		'Template',
+		'Admin Template',
+		'Admin Dashboard',
+		'Admin Panel',
+		'Admin UI',
+	],
+};

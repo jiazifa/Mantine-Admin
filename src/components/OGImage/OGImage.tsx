@@ -1,3 +1,4 @@
+import { META_INFO } from '@/config';
 import React from 'react';
 
 export const OGImage = () => {
@@ -56,7 +57,7 @@ export const OGImage = () => {
 					lineHeight: 1.4,
 				}}
 			>
-				Mantine Admin
+				{META_INFO.title}
 			</div>
 		</div>
 	);
