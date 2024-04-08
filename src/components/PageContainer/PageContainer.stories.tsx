@@ -21,7 +21,10 @@ export const Default: Story = {
 
 export const Fluid: Story = {
 	render: () => (
-		<PageContainer title="Dashboard" fluid>
+		<PageContainer title="Dashboard" items={[{
+			label: 'Dashboard',
+			link: '/dashboard',
+		}]} fluid>
 			Content
 		</PageContainer>
 	),

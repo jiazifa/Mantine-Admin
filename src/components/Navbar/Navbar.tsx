@@ -9,10 +9,14 @@ import { NavLinksGroup } from './NavLinksGroup';
 
 interface Props {
 	data: NavItem[];
-	hidden?: boolean;
+	mobileOpened?: boolean;
+	toggleMobile?: () => void;
+	desktopOpened?: boolean;
+	toggleDesktop?: () => void;
 }
 
-export function Navbar({ data }: Props) {
+export function Navbar(props: Props) {
+	const { data, mobileOpened, toggleMobile, desktopOpened, toggleDesktop } = props;
 	const links = data.map(item => <NavLinksGroup key={item.label} {...item} />);
 
 	return (
